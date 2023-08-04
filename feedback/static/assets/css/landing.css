@@ -1,0 +1,51 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #6db3d1; /* Dark background color */
+    overflow: hidden;
+}
+
+/* Navigation Bar Links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 26px; /* Adjust padding to increase link size */
+    text-decoration: none;
+    font-size: 18px; /* Increase font size for better visibility */
+    transition: background-color 0.3s;
+}
+
+/* Navigation Bar Links on Hover */
+.navbar a:hover {
+    background-color: #ddd; /* Lighter background color on hover */
+    color: rgb(68, 125, 205);
+}
+
+/* Background image */
+.background-image {
+    background-image: url('/static/images/feedback_background.jpg'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Floating images */
+.floating-images {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
