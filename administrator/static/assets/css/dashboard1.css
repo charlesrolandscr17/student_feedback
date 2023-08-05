@@ -2,13 +2,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color:white;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px 0;
+}
+nav {
+    background-color:white;
+    padding: 24px;
 }
 
 nav ul {
@@ -25,7 +29,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: black;
     transition: color 0.3s;
 }
 
@@ -35,16 +39,9 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    height: 400px;
-    text-align: center;
-    color: white;
-}
-
-.hero {
-    position: relative;
     height: 100vh; /* Use viewport height to fill the entire screen */
     text-align: center;
-    color: white;
+    color:white;
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s; /* Add a smooth transition */

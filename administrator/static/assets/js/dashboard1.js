@@ -1,9 +1,6 @@
 const backgrounds = [
-    '{% static "assets/images/hall.jpg" %}',
-    '{% static "assets/images/design1.jpg" %}',
-    '{% static "assets/images/main_gate.jpg" %}',
-    '{% static "assets/images/student1.jpg" %}',
-    '{% static "assets/images/leaders.jpg" %}',    
+    '{% static "assets/images/3.jpg" %}',
+        
 ];
 const heroSection = document.querySelector('.hero');
 
