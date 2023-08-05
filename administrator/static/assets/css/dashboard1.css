@@ -40,11 +40,19 @@ nav ul li a:hover {
     color: white;
 }
 
-.hero h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.hero {
+    position: relative;
+    height: 100vh; /* Use viewport height to fill the entire screen */
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s; /* Add a smooth transition */
+    /* Add an overlay */
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value to control the overlay opacity */
+    /* Add a brightness filter */
+    filter: brightness(1.2); /* Adjust the value for desired brightness */
 }
+
 
 /* Add more styles as needed */
