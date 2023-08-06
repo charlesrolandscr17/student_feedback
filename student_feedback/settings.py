@@ -65,7 +65,7 @@ ROOT_URLCONF = "student_feedback.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [os.path.join(BASE_DIR, 'templates','static')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -133,7 +133,10 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static'),
+    'C:\\Users\\WINDOWS\\Desktop\\student_feedback\\student_feedback\\administrator\\static'
+    #'C:\Users\WINDOWS\Desktop\student_feedback\student_feedback\feedback\static'
+    # This directory does not exist
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 
