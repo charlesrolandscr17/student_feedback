@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "feedback",
     'crispy_forms',
     "crispy_bootstrap4",
+    #'rest_framework'
     "administrator",
 
 ]
@@ -65,7 +66,7 @@ ROOT_URLCONF = "student_feedback.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates','static')],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -4,6 +4,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import StudentUserSerializer, AdminUserSerializer
 from .models import StudentUser, AdminUser
+from django.contrib import messages
+
+
 
 # Create your views here.
 def index(request):
@@ -22,9 +25,9 @@ def login_view(request):
         if user is not None and user.is_active:
             login(request, user)
             if user_type == 'student':
-                return redirect('student_dashboard')
+                return redirect('login.html')
             elif user_type == 'admin':
-                return redirect('admin_dashboard')
+                return redirect('admin_index.html')
         else:
             error_message = "Invalid credentials. Please try again."
             return render(request, 'Admin_login.html', {'error_message': error_message})
@@ -52,4 +55,10 @@ def register_view(request):
     else:
         # Display the registration form for GET requests
         return render(request, 'register.html')
+
+        #if serializer.is_valid():
+            #serializer.save()
+            #messages.success(request, 'Registration successful')
+           # return redirect('admin_login')
+
 
