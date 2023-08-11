@@ -17,6 +17,7 @@ def signin(request):
                 login(request, user)
                 return HttpResponseRedirect("/administrator/course")
             else:
+                login(request, user)
                 return HttpResponseRedirect("/")
     else:
         return render(request, "auth/signin.html")
