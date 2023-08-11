@@ -27,8 +27,6 @@ SECRET_KEY = "django-insecure-zo^q=d636_uo+jpdy@0((ny8jv!ir$j3^m!(m@x(i^iy=7pam*
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,7 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     
     "administrator",
-
+    'formtools'
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

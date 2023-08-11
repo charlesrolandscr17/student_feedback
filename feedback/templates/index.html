@@ -1,32 +1,144 @@
-{% extends 'base.html' %}
-<style>
-  div {
-    margin: 0px;
-  }
-</style>
-{% load static %} {% block Content %}
-<link rel="stylesheet" href="{% static 'main.css' %}" />
-<div
-  class="col-sm-6 col-md-8 muk"
-  id="header-text"
-  style="
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('https://imgs.search.brave.com/zD6CjypGmT4yYc756PV7iy2e-PbLhUBISdgUMup5wtM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9uZXdz/Lm1hay5hYy51Zy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/OS9NYWstQWRtaXNz/aW9uLUJlZC1FeHRl/cm5hbC0yMDIwLUFj/YWRlbWljLVllYXIu/anBn');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0px;
-  "
->
-  <h1 class="p-3 text-white" id="header-h1">Makerere University</h1>
-  <p class="m-5 text-white" id="header-paragraph">
-    Tell us more about your experience having been in this great university.  <br />
-    We are here to listen, act and build for a better future <br>
-    we are MAKERERE UNIVERSITY.
+{% extends 'feedback/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!--YEAR AND SEMESTER SELSCTION-->
+        <div class="container-sm">
+            <form class="sem_year" method="GET">
+                <h2 id ="Sem_year">Choose your details</h2>
+                
+                    <label for="year">Year:</label>
+                <select class="sem_year_options" name="year_of_study" id="year">
+                    {% for year_option in years_of_study %}
+                        <option value="{{ year_option }}" {% if year_option == selected_year %}selected{% endif %}>{{ year_option }}</option>
+                    {% endfor %}
+                </select>
+               
+                <label for="semester">Semester:</label>
+                <select class="sem_year_options" name="semester" id="semester">
+                    {% for semester_option in semester_data %}
+                        <option value="{{ semester_option }}" {% if semester_option == selected_semester %}selected{% endif %}>{{ semester_option }}</option>
+                    {% endfor %}
+                </select>
+                <p></p>
+                <hr>
+                <input class="btn " type="submit" style="color:rgb(2, 31, 3) rgb; background-color: #eef4ee;" id="course_units_loader"; >
+            </form>
+            
+        </div>
+           
+        <!--COURSE UNIT CARDS-->
+        <div  id="courseUnitsContainer" class="course-units">
+            <div class="container mt-4">
+            <h2>Feedback Form</h2>
+                <div class="description-box">
+                    <p class="">Courses feedback forms</p>
+                    <p class="box-description">1.The form is supposed to be filled according to the courses one is doing</p>
+                    <p class="box-description">2.Please endevour to fill in form independently</p>
+                    <p class="box-description">3.No two forms shall be filled for one course</p>
+                    
+                </div>
+                <div class="row row-cols-1 row-cols-md-5">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                              
+                                {% for course in courses %}
+                                    {% if forloop.counter0 == 0 %}
+                                        <h4>{{ course }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="form.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                                {% for course in courses %}
+                                    {% if forloop.counter0 == 1 %}
+                                        <h4>{{ course }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="form.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                                
+                                {% for course in courses %}
+                                    {% if forloop.counter0 == 2 %}
+                                        <h4>{{ course }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="form.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                                {% for course in courses %}
+                                    {% if forloop.counter0 == 3 %}
+                                        <h4>{{ course }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="form.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                                
+                                {% for course in courses %}
+                                    {% if forloop.counter0 == 4 %}
+                                        <h4>{{ course }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="form.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        
+            <!--FACILITIES CARDS-->
+            <div class="container mt-4">
+        
+            <h2>Facilities evaluation</h2>
+            <div class="description-box">
+                <p class="">Facilities feedback forms</p>
+                <p class="box-description">1.In this form, kindly fill in your feedback on the campus facilities
+                i.e (Lecture rooms, libraries, toilets, etc)</p>
+                
+            </div>
+                <div class="row row-cols-1 row-cols-md-5">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="{%static 'images/grad.jpg'%}" class="card-img-top" alt="Fissure in Sandstone">
+                            <div class="card-body">
+                                        <h4>University Facilities</h4>
+                                <a href="facilitiesform.html" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                    </div>
 
-
-  
-  </p>
-</div>
-{% endblock Content %}
+                </div>   
+            </div>
+        </div>
+{% endblock content %}
